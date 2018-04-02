@@ -23,7 +23,7 @@ void start_game(){
 	ball.x = w / 2, ball.y = h / 2, ball.dir = -1;
 	while (1) {
 		while (uptime() < next_frame) ; // 等待一帧的到来
-		while ((key = readkey()) != _KEY_NONE) {
+		while ((key = read_key()) != _KEY_NONE) {
 			kbd_event(key);         // 处理键盘事件
 		}
 		game_progress();          // 处理一帧游戏逻辑，更新物体的位置等
@@ -50,7 +50,7 @@ static void kbd_event(int key){
 				ball.dir = RIGHT;	
 				break;
 			default:
-
+				break;
 		}
 	}
 }
@@ -84,6 +84,8 @@ void game_progress(){
 			}else{
 				ball.x++;
 			}
+			break;
+		default:
 			break;
 	}
 }
