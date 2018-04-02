@@ -2,16 +2,18 @@
 #include <amdev.h>
 #include <stdarg.h>
 // TODO: implement necessary libraries
-void printf_int(unsigned int d, int base){
+int printf_int(unsigned int d, int base){
+	int ret = 0;
 	char mp[20] = "0123456789ABCDEF";
 	if (base == 10 && d < 0){
 		d = -d;
-		_putc('-'); 
+		_putc('-'), ret++; 
 	}
 	char *ptr; char dig[64];
 	ptr = &dig[63]; *ptr = '\0';
 	for ( ; d != 0; *--ptr = mp[d % base], d /= base);
-	while (*ptr++) _putc(*ptr);
+	while (*ptr++) _putc(*ptr), ret++;
+	return ret;
 }
 int printf(const char *fmt, ...) {
     /*
@@ -19,7 +21,7 @@ int printf(const char *fmt, ...) {
       _putc(*fmt);
     }
     */
-    
+    int ret = 0;
 	va_list ap; 
 	const char* iter;
     unsigned int d; char c; char* s; 
@@ -28,26 +30,29 @@ int printf(const char *fmt, ...) {
 		if (*iter != '%'){
 			_putc(*iter);
 		}else{
+			char op[10];
+
 			++iter;
+
 			switch (*iter){
 				case 's':
 					s = va_arg(ap, char*);
-					for (int i = 0; s[i] != '\0'; i++) _putc(s[i]);
+					for (int i = 0; s[i] != '\0'; i++) _putc(s[i]), ret++;
 					break; 
 				
 				case 'd':
 					d = va_arg(ap, int);
-					printf_int(d, 10);
+					ret += printf_int(d, 10);
 					break;
 
 				case 'x':
 					d = va_arg(ap, unsigned int);
-					printf_int(d, 16);
+					ret += printf_int(d, 16);
 					break; 	
 			  
 				case 'c':
 					c = (char)va_arg(ap, int);
-					_putc(c);
+					_putc(c), ret++;
 					break;
 			}
 		}
