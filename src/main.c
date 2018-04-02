@@ -35,7 +35,7 @@ int printf(const char *fmt, ...) {
 				}
 				char *ptr; char dig[64];
 				ptr = &dig[63]; *ptr = '\0';
-				for ( ; d > 0; *--ptr = mp[d % 10], d /= 10);
+				for ( ; d != 0; *--ptr = mp[d % 10], d /= 10);
 				while (*ptr++) _putc(*ptr);
 				break; 	
 		  
