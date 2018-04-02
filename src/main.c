@@ -2,17 +2,27 @@
 #include <amdev.h>
 #include <stdarg.h>
 // TODO: implement necessary libraries
-int printf_int(unsigned int d, int base){
+static char mp[] = "0123456789ABCDEF";
+int printf_int(unsigned int d, int base, int length, int type){
 	int ret = 0;
-	char mp[20] = "0123456789ABCDEF";
 	if (base == 10 && d < 0){
 		d = -d;
 		_putc('-'), ret++; 
 	}
 	char *ptr; char dig[64];
 	ptr = &dig[63]; *ptr = '\0';
-	for ( ; d != 0; *--ptr = mp[d % base], d /= base);
+	for ( ; d != 0; *--ptr = mp[d % base], d /= base, ret++);
+	while (length > ret && type >= 0){
+		char c; 
+		switch (type){
+			case 0: c = '0'; break;
+			case 1: c = ' '; break;
+		}
+		*--ptr = c; 
+		ret++; 
+	}
 	while (*ptr++) _putc(*ptr), ret++;
+	
 	return ret;
 }
 int printf(const char *fmt, ...) {
@@ -30,10 +40,22 @@ int printf(const char *fmt, ...) {
 		if (*iter != '%'){
 			_putc(*iter);
 		}else{
-			//char op[10];
-
-			++iter;
-
+			char op[20]; int opn = 0;
+			while (*iter!='x'&&*iter!='d'&&*iter!='c'&&*iter!='s''){
+				++iter;
+				op[opn++] = *iter;
+			}
+			int len = 0, type = -1;
+			if (opn > 0){
+				if (op[0] == '0') {
+					type = 0;
+					for (int i = opn - 1; i >= 1; i++) len = 10*len + (op[i] - '0');
+				}else{
+					type = 1;
+					for (int i = opn - 1; i >= 0; i++) len = 10*len + (op[i] - '0');
+				}
+			}
+			
 			switch (*iter){
 				case 's':
 					s = va_arg(ap, char*);
@@ -42,12 +64,12 @@ int printf(const char *fmt, ...) {
 				
 				case 'd':
 					d = va_arg(ap, int);
-					ret += printf_int(d, 10);
+					ret += printf_int(d, 10, len, type);
 					break;
 
 				case 'x':
 					d = va_arg(ap, unsigned int);
-					ret += printf_int(d, 16);
+					ret += printf_int(d, 16, len, type);
 					break; 	
 			  
 				case 'c':
