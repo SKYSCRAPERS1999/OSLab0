@@ -22,7 +22,8 @@ int printf(const char *fmt, ...) {
 				s = va_arg(ap, char*);
 				for (int i = 0; s[i] != '\0'; i++) _putc(s[i]);
 				break; 
-				
+			
+			case 'x':
 		    case 'd':
 				d = va_arg(ap, int); 
 				if (d < 0){
