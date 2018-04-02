@@ -41,10 +41,11 @@ int printf(const char *fmt, ...) {
 		if (*iter != '%'){
 			_putc(*iter);
 		}else{
+			++iter;
 			char op[20]; int opn = 0;
 			while (*iter!='x'&&*iter!='d'&&*iter!='c'&&*iter!='s'){
-				++iter;
 				op[opn++] = *iter;
+				++iter;
 			}
 			int len = 0, type = -1;
 			if (opn > 0){
