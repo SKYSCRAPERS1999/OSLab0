@@ -1,6 +1,6 @@
 #include <am.h>
 static unsigned int seed = 1;
-void srand(int c){
+void srand(unsigned int c){
 	seed = c;
 }
 unsigned int rand(){
