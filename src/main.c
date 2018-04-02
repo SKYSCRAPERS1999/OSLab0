@@ -17,7 +17,6 @@ int printf(const char *fmt, ...) {
     for (iter = fmt; *iter != '\0'; ++iter){
 		if (*iter != '%'){
 			_putc(*iter);
-			++iter;
 		}else{
 			++iter;
 			switch (*iter){
