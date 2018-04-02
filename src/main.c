@@ -129,5 +129,6 @@ static void ata_test(_Device *dev) {
   }
 
   char op[] = "abc";
-  char op2[20]; strcpy(op2, op); printf("%s\n", op2);
+  char op2[20]; strcpy(op2, op); printf("%s\n%s\n%d\n%d\n",op,op2
+	,strlen(op),strlen(op2));
 }
