@@ -3,11 +3,11 @@
 #include <stdarg.h>
 // TODO: implement necessary libraries
 int printf(const char *fmt, ...) {
-    /*
+    
     for (; *fmt; fmt++) {
       _putc(*fmt);
     }
-    */
+    
     /*
 	va_list ap;
     int d; char c; char* s;
