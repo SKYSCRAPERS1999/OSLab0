@@ -14,6 +14,7 @@ static void my_test();
 int main() {
   if (_ioe_init() != 0) _halt(1);
   start_game();
+  //test_init();
   return 0;
 }
 
@@ -48,7 +49,7 @@ static void input_test(_Device *dev) {
 
 static void timer_test(_Device *dev) {
   _UptimeReg uptime;
-  uint32_t t0, t1;
+  int32_t t0, t1;
   
   dev->read(_DEVREG_TIMER_UPTIME, &uptime, sizeof(uptime));
   t0 = uptime.lo;
