@@ -15,6 +15,7 @@ static struct Ball{
 
 static void kbd_event(int);
 static void game_progress();
+static void screen_erase();
 static void screen_update();
 static void screen_clear();
 
