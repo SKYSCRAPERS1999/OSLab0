@@ -13,10 +13,11 @@ int printf_int(unsigned int d, int base, int length, int type){
 	ptr = &dig[63]; *ptr = '\0';
 	for ( ; d != 0; *--ptr = mp[d % base], d /= base, ret++);
 	while (length > ret && type >= 0){
-		char c = ''; 
+		char c; 
 		switch (type){
 			case 0: c = '0'; break;
 			case 1: c = ' '; break;
+			default: c = ' ';
 		}
 		*--ptr = c; 
 		ret++; 
