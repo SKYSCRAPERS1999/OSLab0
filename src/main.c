@@ -12,7 +12,6 @@ void printf_int(int d, int base){
 	ptr = &dig[63]; *ptr = '\0';
 	for ( ; d != 0; *--ptr = mp[d % base], d /= base);
 	while (*ptr++) _putc(*ptr);
-	return 0;
 }
 int printf(const char *fmt, ...) {
     /*
