@@ -1,6 +1,7 @@
 #include <am.h>
 #include <amdev.h>
 #include <stdarg.h>
+#include <mylibc.h>
 
 #define KEYDOWN_MASK 0x8000
 uint32_t uptime(){
