@@ -41,7 +41,7 @@ int printf(const char *fmt, ...) {
 			_putc(*iter);
 		}else{
 			char op[20]; int opn = 0;
-			while (*iter!='x'&&*iter!='d'&&*iter!='c'&&*iter!='s''){
+			while (*iter!='x'&&*iter!='d'&&*iter!='c'&&*iter!='s'){
 				++iter;
 				op[opn++] = *iter;
 			}
