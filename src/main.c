@@ -17,7 +17,8 @@ int printf(const char *fmt, ...) {
 			_putc(*fmt);
 			fmt++;
 		}
-	    switch (*fmt++){
+		fmt++;
+	    switch (*fmt){
 		    case 's':
 				s = va_arg(ap, char*);
 				for (int i = 0; s[i] != '\0'; i++) _putc(s[i]);
@@ -40,6 +41,7 @@ int printf(const char *fmt, ...) {
 				_putc(c);
 				break;
 	    }
+		fmt++;
     }
 	va_end(ap);
     return 0;
@@ -53,9 +55,7 @@ static void ata_test(_Device *dev);
 
 int main() {
   if (_ioe_init() != 0) _halt(1);
-  printf("_heap = [%x, %x)\n", _heap.start, _heap.end);
-  return 0;
-  //printf("_heap = [%08x, %08x)\n", _heap.start, _heap.end);
+  printf("_heap = [%08x, %08x)\n", _heap.start, _heap.end);
   for (int n = 1; ; n++) {
     _Device *dev = _device(n);
     if (!dev) break;
