@@ -7,7 +7,7 @@
 static int next_frame = 0;
 static int key = _KEY_NONE;
 static int w, h;
-static int FPS = 150;
+static int FPS = 350;
 enum{UP, DOWN, LEFT, RIGHT};
 static struct Ball{
 	int x, y, dir;
