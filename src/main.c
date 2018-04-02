@@ -1,12 +1,42 @@
 #include <am.h>
 #include <amdev.h>
+#include <stdarg.h>
 
 // TODO: implement necessary libraries
 int printf(const char *fmt, ...) {
-  for (; *fmt; fmt++) {
-    _putc(*fmt);
-  }
-  return 0;
+    /*
+    for (; *fmt; fmt++) {
+      _putc(*fmt);
+    }
+    */
+    va_list ap;
+    int d, char c, char* s;
+    va_start(ap, fmt);
+    while (*fmt){
+	    switch (*fmt++){
+		    case 's':
+				s = va_arg(arg,char *);
+				for (int i = 0; s[i] != '\0'; i++) _putc(s[i]);
+				break; 
+				
+		    case 'd':
+				d = va_arg(arg, int); 
+				if (d < 0){
+					d = -d;
+					_putc('-'); 
+				}
+				int dig[64] = {0,}, n = 0;
+				for ( ; d > 0; dig[n++] = d % 10, d /= 10);
+				for (int i = n - 1; i >= 0; i--) c = dig[i] + '0', _putc(c);
+				break; 	
+		  
+		    case 'c':
+				c = va_arg(ap, int);
+				_putc(c);
+				break;
+	    }
+    } 
+    return 0;
 }
 
 static void input_test(_Device *dev);
@@ -41,7 +71,7 @@ static void input_test(_Device *dev) {
 static void timer_test(_Device *dev) {
   _UptimeReg uptime;
   uint32_t t0, t1;
-
+  
   dev->read(_DEVREG_TIMER_UPTIME, &uptime, sizeof(uptime));
   t0 = uptime.lo;
 
