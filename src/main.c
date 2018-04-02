@@ -18,7 +18,7 @@ int printf(const char *fmt, ...) {
 			_putc(*fmt);
 			fmt++;
 		}
-		while (!isalpha(*fmt)) fmt++;
+		while (0 == isalpha(*fmt)) fmt++;
 	    switch (*fmt){
 		    case 's':
 				s = va_arg(ap, char*);
