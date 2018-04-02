@@ -22,7 +22,7 @@ int printf_int(unsigned int d, int base, int length, int type){
 		*--ptr = c; 
 		ret++; 
 	}
-	while (*ptr++) _putc(*ptr), ret++;
+	while (*ptr++) _putc(*ptr);
 	
 	return ret;
 }
