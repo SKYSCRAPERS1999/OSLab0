@@ -12,17 +12,13 @@ int printf(const char *fmt, ...) {
     int d; char c; char* s;
     va_start(ap, fmt);
     while (*fmt){
-
-		if (*fmt != '%'){
-
 		while (*fmt != '%'){
 			_putc(*fmt);
 			fmt++;
 		}
 		
 		while (*fmt != 's' && *fmt != 'd' && *fmt != 'x' && *fmt != 'c') fmt++;
-		
-		}
+
 	    switch (*fmt){
 		    case 's':
 				s = va_arg(ap, char*);
@@ -39,7 +35,7 @@ int printf(const char *fmt, ...) {
 				int dig[64] = {0,}; int nd = 0;
 				for ( ; d > 0; dig[nd] = d % 10, d /= 10, nd++);
 				for (int i = nd - 1; i >= 0; i--) {
-					c = (char)(dig[i] + '0');
+					c = (char)(dig[i]&0x8 + '0');
 					_putc(c);
 				}
 				break; 	
