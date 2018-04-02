@@ -24,7 +24,7 @@ int read_key(){
 		else if (dev->id == _DEV_INPUT){
 			dev->read(_DEVREG_INPUT_KBD, &key, sizeof(key));
 		    if (key.keycode == _KEY_NONE) return _KEY_NONE;
-			else return key.keycode | (key.keydown ? KEYDOWN_MASK : 0);
+			else return (key.keycode | (key.keydown ? KEYDOWN_MASK : 0));
 		}
 	}
 	return _KEY_NONE;
