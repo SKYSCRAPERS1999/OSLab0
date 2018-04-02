@@ -1,7 +1,7 @@
 #include <am.h>
 #include <amdev.h>
 #include <stdarg.h>
-#include <mylibc.h>
+#include <mylib.h>
 // TODO: implement necessary libraries
 
 static void input_test(_Device *dev);
