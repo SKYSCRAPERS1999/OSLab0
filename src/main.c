@@ -1,7 +1,10 @@
 #include <am.h>
 #include <amdev.h>
 #include <stdarg.h>
+#include <mylibc.h>
 // TODO: implement necessary libraries
+
+/*
 static char mp[] = "0123456789ABCDEF";
 int printf_int(unsigned int d, int base, int length, int type){
 	int ret = 0;
@@ -22,17 +25,13 @@ int printf_int(unsigned int d, int base, int length, int type){
 		*--ptr = c; 
 		ret++; 
 	}
-	/*if d = 0*/ if (*ptr == '\0') *--ptr = '0', ret++;
+	if (*ptr == '\0') *--ptr = '0', ret++;
 	while (*ptr) _putc(*ptr++);
 	
 	return ret;
 }
+
 int printf(const char *fmt, ...) {
-    /*
-    for (; *fmt; fmt++) {
-      _putc(*fmt);
-    }
-    */
     int ret = 0;
 	va_list ap; 
 	const char* iter;
@@ -85,6 +84,7 @@ int printf(const char *fmt, ...) {
 	va_end(ap);
     return 0;
 }
+*/
 
 static void input_test(_Device *dev);
 static void timer_test(_Device *dev);
