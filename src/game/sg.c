@@ -62,7 +62,7 @@ static void kbd_event(int key){
 void game_progress(){
 	switch (ball.dir){
 		case UP:
-			if (ball.y <= bd){
+			if (ball.y <= 0){
 				ball.dir = DOWN; ball.y = bd + 1;
 			}else{
 				ball.y--;
@@ -83,8 +83,8 @@ void game_progress(){
 			}
 			break;
 		case RIGHT:
-			if (ball.x >= w - bd - 1){
-				ball.dir = LEFT; ball.x = w - bd - 2;
+			if (ball.x >= w - 1){
+				ball.dir = LEFT; ball.x = w - 2;
 			}else{
 				ball.x++;
 			}
