@@ -9,7 +9,7 @@ int printf(const char *fmt, ...) {
     }
     */
     
-	va_list ap; char* iter;
+	va_list ap; const char* iter;
     int d; char c; char* s; 
 	char mp[20] = "0123456789ABCDEF";
     va_start(ap, fmt);
