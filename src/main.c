@@ -13,15 +13,15 @@ int printf(const char *fmt, ...) {
     int d; char c; char* s;
 	char mp[20] = "0123456789ABCDEF";
     va_start(ap, fmt);
-    while (*fmt){
-		while (*fmt != '%'){
-			_putc(*fmt);
-			fmt++;
+    for (char* iter = fmt; *iter != '\0'; ++iter){
+		while (*iter != '%'){
+			_putc(*iter);
+			iter++;
 		}
 		
-		while (*fmt != 's' && *fmt != 'd' && *fmt != 'x' && *fmt != 'c') fmt++;
+		while (*iter != 's' && *iter != 'd' && *iter != 'x' && *iter != 'c') iter++;
 
-	    switch (*fmt){
+	    switch (*iter){
 		    case 's':
 				s = va_arg(ap, char*);
 				for (int i = 0; s[i] != '\0'; i++) _putc(s[i]);
@@ -45,7 +45,7 @@ int printf(const char *fmt, ...) {
 				_putc(c);
 				break;
 	    }
-		fmt++;
+		iter++;
     }
 	va_end(ap);
     return 0;
