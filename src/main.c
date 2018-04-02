@@ -30,6 +30,13 @@ int main() {
 }
 
 static void input_test(_Device *dev) {
+  int key = 0;
+  while(1){
+	  key = read_key();
+	  if (key != _KEY_NONE){
+		  printf("%d\n", key);
+	  }
+  }
   printf("Input device test skipped.\n");
 }
 
@@ -138,7 +145,7 @@ static void ata_test(_Device *dev) {
   printf("%s | %s\n", a, b);
   printf("%d\n",strcmp(a,b));
 
-  //printf("\n%d\n", uptime());
+  printf("\n%d\n", uptime());
   int key = 0;
   while(1){
 	  while ((key = read_key()) != _KEY_NONE){
