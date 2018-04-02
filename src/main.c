@@ -33,7 +33,7 @@ int printf(const char *fmt, ...) {
 				}
 				int dig[64] = {0,}, n = 0;
 				for ( ; d > 0; dig[n++] = d % 10, d /= 10);
-				for (int i = n - 1; i >= 0; i--) c = dig[i] + '0', _putc(c);
+				for (int i = n - 1; i >= 0; i--) c = (char)(dig[i] + '0'), _putc(c);
 				break; 	
 		  
 		    case 'c':
