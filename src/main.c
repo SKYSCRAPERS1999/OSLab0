@@ -1,8 +1,6 @@
 #include <am.h>
 #include <amdev.h>
 #include <stdarg.h>
-#include <ctype.h>
-int isalpha(int);
 // TODO: implement necessary libraries
 int printf(const char *fmt, ...) {
     /*
@@ -18,7 +16,8 @@ int printf(const char *fmt, ...) {
 			_putc(*fmt);
 			fmt++;
 		}
-		while (!isalpha(*fmt)) fmt++;
+		while (*fmt != 's' && *fmt != 'd' && *fmt != 'x' && 
+				*fmt != 'c') fmt++;
 	    switch (*fmt){
 		    case 's':
 				s = va_arg(ap, char*);
