@@ -35,7 +35,7 @@ int printf(const char *fmt, ...) {
 				int dig[64] = {0,}; int nd = 0;
 				for ( ; d > 0; dig[nd] = d % 10, d /= 10, nd++);
 				for (int i = nd - 1; i >= 0; i--) {
-					c = (char)(dig[i]&0x8 + '0');
+					c = (char)((dig[i]&0x8) + '0');
 					_putc(c);
 				}
 				break; 	
