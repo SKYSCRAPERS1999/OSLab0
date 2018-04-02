@@ -33,7 +33,7 @@ static void input_test(_Device *dev) {
   int key = 0;
   while(1){
 	  key = read_key();
-	  if (key != _KEY_NONE){
+	  if ((key & 0xfff) != 0){
 		  printf("%d\n", key);
 	  }
   }
