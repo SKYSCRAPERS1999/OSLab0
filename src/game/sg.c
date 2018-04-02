@@ -23,6 +23,7 @@ void start_game(){
 	next_frame = 0;
 	w = screen_width(), h = screen_height();
 	ball.x = w / 2, ball.y = h / 2, ball.dir = -1;
+	screen_clear();
 	while (1) {
 		while (uptime() < next_frame) ; // 等待一帧的到来
 		while ((key = read_key()) != _KEY_NONE) {
