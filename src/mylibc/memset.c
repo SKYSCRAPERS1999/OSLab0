@@ -2,7 +2,7 @@
 void* memset(void* s, int c, size_t n){
 	char* p = (char*)s;
 	while (n--){
-		*p++ = (char)c;
+		*p++ = c;
 	}
 	return s;
 }
