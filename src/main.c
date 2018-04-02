@@ -10,7 +10,7 @@ int printf(const char *fmt, ...) {
     }
     */
     va_list ap;
-    int d, char c, char* s;
+    int d; char c; char* s;
     va_start(ap, fmt);
     while (*fmt){
 	    switch (*fmt++){
