@@ -93,16 +93,16 @@ void game_progress(){
 }
 
 void screen_clear(){
-	uint32_t a[] = {0xffffffff};
+	uint32_t a[1] = {0xffffffff};
 	for (int i = 0; i < w; i++){
 		for (int j = 0; j < h; j++){
-			draw_rect(a, i, j, w, h);	
+			draw_rect(a, i, j, 1, 1);	
 		}
 	}
 }
 
 void screen_update(){
 	uint32_t a[bd * bd + 11];
-	memset(a, 0x22, sizeof(a));
+	memset(a, 0x77, sizeof(a));
 	draw_rect(a, ball.x, ball.y, w, h);	
 }
