@@ -16,11 +16,13 @@ static struct Ball{
 static void kbd_event(int);
 static void game_progress();
 static void screen_update();
+static void screen_clear();
 
 void start_game(){
 	next_frame = 0;
 	w = screen_width(), h = screen_height();
 	ball.x = w / 2, ball.y = h / 2, ball.dir = -1;
+	screen_clear();
 	while (1) {
 		while (uptime() < next_frame) ; // 等待一帧的到来
 		while ((key = read_key()) != _KEY_NONE) {
@@ -87,6 +89,15 @@ void game_progress(){
 			break;
 		default:
 			break;
+	}
+}
+
+void screen_clear(){
+	uint32_t a[] = {0};
+	for (int i = 0; i < w; i++){
+		for (int j = 0; j < h; j++){
+			draw_rect(a, i, j, w, h);	
+		}
 	}
 }
 
