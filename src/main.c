@@ -50,10 +50,10 @@ int printf(const char *fmt, ...) {
 			if (opn > 0){
 				if (op[0] == '0') {
 					type = 0;
-					for (int i = opn - 1; i >= 1; i++) len = 10*len + (op[i] - '0');
+					for (int i = opn - 1; i >= 1; i--) len = 10*len + (op[i] - '0');
 				}else{
 					type = 1;
-					for (int i = opn - 1; i >= 0; i++) len = 10*len + (op[i] - '0');
+					for (int i = opn - 1; i >= 0; i--) len = 10*len + (op[i] - '0');
 				}
 			}
 			
