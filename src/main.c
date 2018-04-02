@@ -30,7 +30,7 @@ int printf(const char *fmt, ...) {
 		if (*iter != '%'){
 			_putc(*iter);
 		}else{
-			char op[10];
+			//char op[10];
 
 			++iter;
 
