@@ -53,7 +53,6 @@ static void timer_test(_Device *dev) {
   t1 = uptime.lo;
 
   printf("Loop 10^7 time elapse: %d ms\n", t1 - t0);
-  printf("\n%d\n", uptime());
 }
 
 static void video_test(_Device *dev) {
@@ -146,4 +145,5 @@ static void ata_test(_Device *dev) {
   printf("%s | %s\n", a, b);
   printf("%d\n",strcmp(a,b));
 
+  printf("\n%d\n", uptime());
 }
