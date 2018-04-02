@@ -10,7 +10,7 @@ int printf(const char *fmt, ...) {
     */
     va_list ap;
     int d; char c; char* s;
-	char mp[20] = "0123456789";
+	char mp[20] = "0123456789ABCDEF";
     va_start(ap, fmt);
     while (*fmt){
 		while (*fmt != '%'){
@@ -34,7 +34,7 @@ int printf(const char *fmt, ...) {
 					_putc('-'); 
 				}
 				char *ptr; char dig[64];
-				ptr = &dig[63]; *dig = '\0';
+				ptr = &dig[63]; *ptr = '\0';
 				for ( ; d > 0; *--ptr = mp[d % 10], d /= 10);
 				while (*ptr++) _putc(*ptr);
 				break; 	
