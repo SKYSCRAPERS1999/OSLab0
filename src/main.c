@@ -4,7 +4,7 @@
 // TODO: implement necessary libraries
 void printf_int(unsigned int d, int base){
 	char mp[20] = "0123456789ABCDEF";
-	if (d < 0){
+	if (base == 10 && d < 0){
 		d = -d;
 		_putc('-'); 
 	}
