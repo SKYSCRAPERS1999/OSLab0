@@ -12,12 +12,17 @@ int printf(const char *fmt, ...) {
     int d; char c; char* s;
     va_start(ap, fmt);
     while (*fmt){
+
+		if (*fmt != '%'){
+
 		while (*fmt != '%'){
 			_putc(*fmt);
 			fmt++;
 		}
-		while (*fmt != 's' && *fmt != 'd' && *fmt != 'x' && 
-				*fmt != 'c') fmt++;
+		
+		while (*fmt != 's' && *fmt != 'd' && *fmt != 'x' && *fmt != 'c') fmt++;
+		
+		}
 	    switch (*fmt){
 		    case 's':
 				s = va_arg(ap, char*);
