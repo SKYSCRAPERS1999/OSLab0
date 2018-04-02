@@ -2,7 +2,7 @@
 #include <amdev.h>
 #include <stdarg.h>
 #include <ctype.h>
-
+int isalpha(int);
 // TODO: implement necessary libraries
 int printf(const char *fmt, ...) {
     /*
@@ -18,7 +18,7 @@ int printf(const char *fmt, ...) {
 			_putc(*fmt);
 			fmt++;
 		}
-		while (0 == isalpha((int)*fmt)) fmt++;
+		while (!isalpha(*fmt)) fmt++;
 	    switch (*fmt){
 		    case 's':
 				s = va_arg(ap, char*);
