@@ -3,17 +3,17 @@
 
 static char mp[] = "0123456789ABCDEF";
 static int printf_int(unsigned int d, int base, int length, int type){
-	int ret = 0;
+	int ret = 0, d2 = d;
 	if (base == 10){
-		d = (int)d;
-		if (d < 0){
-			d = -d;
+		d2 = (int)d;
+		if (d2 < 0){
+			d2 = -d2;
 			_putc('-'), ret++; 
 		}
 	}
 	char *ptr; char dig[64];
 	ptr = &dig[63]; *ptr = '\0';
-	for ( ; d != 0; *--ptr = mp[d % base], d /= base, ret++);
+	for ( ; d2 != 0; *--ptr = mp[d2 % base], d2 /= base, ret++);
 	while (length > ret && type >= 0){
 		char c; 
 		switch (type){
