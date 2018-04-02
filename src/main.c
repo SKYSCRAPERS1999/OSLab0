@@ -1,6 +1,7 @@
 #include <am.h>
 #include <amdev.h>
 #include <stdarg.h>
+#include <ctype.h>
 
 // TODO: implement necessary libraries
 int printf(const char *fmt, ...) {
@@ -17,7 +18,7 @@ int printf(const char *fmt, ...) {
 			_putc(*fmt);
 			fmt++;
 		}
-		fmt++;
+		while (!isalpha(*fmt)) fmt++;
 	    switch (*fmt){
 		    case 's':
 				s = va_arg(ap, char*);
