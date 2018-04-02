@@ -35,7 +35,8 @@ int printf(const char *fmt, ...) {
 				_putc(c);
 				break;
 	    }
-    } 
+    }
+	va_end(ap);
     return 0;
 }
 
