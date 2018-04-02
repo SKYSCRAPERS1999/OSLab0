@@ -22,13 +22,13 @@ void start_game(){
 	next_frame = 0;
 	w = screen_width(), h = screen_height();
 	ball.x = w / 2, ball.y = h / 2, ball.dir = -1;
-	screen_clear();
 	while (1) {
 		while (uptime() < next_frame) ; // 等待一帧的到来
 		while ((key = read_key()) != _KEY_NONE) {
 			kbd_event(key);         // 处理键盘事件
 		}
 		game_progress();          // 处理一帧游戏逻辑，更新物体的位置等
+		screen_clear();
 		screen_update();          // 重新绘制屏幕
 		next_frame += 1000 / FPS; // 计算下一帧的时间
 	}
