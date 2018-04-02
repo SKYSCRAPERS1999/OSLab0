@@ -142,7 +142,7 @@ static void ata_test(_Device *dev) {
   int key = 0;
   while(1){
 	  if ((key = read_key()) != _KEY_NONE){
-		  printf("%d\n", key);
+		  printf("%d\n", 123);//key);
 	  }
   }
 }
