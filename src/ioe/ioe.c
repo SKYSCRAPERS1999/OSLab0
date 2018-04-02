@@ -29,8 +29,24 @@ int read_key(){
 	else return (key.keycode | (key.keydown ? KEYDOWN_MASK : 0));
 }
 
-void draw_rect(uint32_t *pixels, int x, int y, int w, int h){
-	
+void screen_width(){
+	_VideoInfoReg vdo;
+	_Device* dev = get_dev(_DEV_VIDEO);
+	dev->read(_DEVREG_VIDEO_INFO, &vdo, sizeof(vdo));
+	return vdo.width;
+}
 
+void screen_height(){
+	_VideoInfoReg vdo;
+	_Device* dev = get_dev(_DEV_VIDEO);
+	dev->read(_DEVREG_VIDEO_INFO, &vdo, sizeof(vdo));
+	return vdo.height;
+}
 
+void draw_rect(uint32_t *pixels, int x, int y, int w, int h){	
+	_VideoInfoReg vdo;
+	_Device* dev = get_dev(_DEV_VIDEO);
+	vdo.pixels = pixels; vdo.x = x; vdo.y = y; vdo.w = w; vdo.h = h;
+
+	dev->write(_DEVREG_VIDEO_FBCTL, &vdo, sizeof(vdo));
 }
