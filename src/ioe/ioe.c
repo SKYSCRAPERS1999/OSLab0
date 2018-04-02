@@ -23,7 +23,8 @@ int read_key(){
 		if (!dev) break;
 		else if (dev->id == _DEV_INPUT){
 			dev->read(_DEVREG_INPUT_KBD, &key, sizeof(key));
-		    if (key.keycode == _KEY_NONE) return _KEY_NONE;
+		    printf("keycode = %d\n", key.keycode);
+			if (key.keycode == _KEY_NONE) return _KEY_NONE;
 			else return (key.keycode | (key.keydown ? KEYDOWN_MASK : 0));
 		}
 	}
