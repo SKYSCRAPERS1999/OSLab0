@@ -147,6 +147,7 @@ static void ata_test(_Device *dev) {
 
   //printf("\n%d\n", uptime());
   printf("%d X %d\n", screen_width(), screen_height());
-  unsigned int *aa = new unsigned int[10000]; memset(aa, 0xdd, sizeof(aa));
+  unsigned int *aa =  (int*)malloc(sizeof(int)*10000); memset(aa, 0xdd, sizeof(aa));
   draw_rect(aa, 1, 1, 300, 300);
+  free(aa);
 }
