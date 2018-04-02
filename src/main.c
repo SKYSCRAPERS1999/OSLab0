@@ -2,7 +2,7 @@
 #include <amdev.h>
 #include <stdarg.h>
 // TODO: implement necessary libraries
-void printf_int(int d, int base){
+void printf_int(unsigned int d, int base){
 	char mp[20] = "0123456789ABCDEF";
 	if (d < 0){
 		d = -d;
@@ -22,7 +22,7 @@ int printf(const char *fmt, ...) {
     
 	va_list ap; 
 	const char* iter;
-    int d; char c; char* s; 
+    unsigned int d; char c; char* s; 
     va_start(ap, fmt);
     for (iter = fmt; *iter != '\0'; ++iter){
 		if (*iter != '%'){
