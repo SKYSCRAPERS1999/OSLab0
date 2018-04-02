@@ -105,12 +105,12 @@ void screen_clear(){
 
 void screen_erase(){
 	uint32_t a[bd * bd + 11];
-	memset(a, 0, sizeof(a));
+	memset(a, 0xff, sizeof(a));
 	draw_rect(a, ball.x, ball.y, bd, bd);	
 }
 
 void screen_update(){
 	uint32_t a[bd * bd + 11];
-	memset(a, 0x77, sizeof(a));
+	memset(a, 0, sizeof(a));
 	draw_rect(a, ball.x, ball.y, bd, bd);	
 }
