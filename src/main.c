@@ -22,7 +22,7 @@ int printf_int(unsigned int d, int base, int length, int type){
 		*--ptr = c; 
 		ret++; 
 	}
-	while (*ptr++) _putc(*ptr);
+	while (*ptr) _putc(*ptr++);
 	
 	return ret;
 }
@@ -132,7 +132,7 @@ static void timer_test(_Device *dev) {
 static void video_test(_Device *dev) {
   _VideoInfoReg info;
   dev->read(_DEVREG_VIDEO_INFO, &info, sizeof(info));
-  printf("Screen size: %04d x %04d\n", info.width, info.height);
+  printf("Screen size: %d x %d\n", info.width, info.height);
   for (int x = 0; x < 100; x++)
     for (int y = 0; y < 100; y++) {
       _FBCtlReg ctl;
