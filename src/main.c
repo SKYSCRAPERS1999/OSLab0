@@ -138,5 +138,5 @@ static void ata_test(_Device *dev) {
   printf("%s | %s\n", a, b);
   printf("%d\n",strcmp(a,b));
 
-  printf("\n%d\n", uptime());
+  //printf("\n%d\n", uptime());
 }
