@@ -128,7 +128,8 @@ static void ata_test(_Device *dev) {
     printf("\n");
   }
   char a[20]; char b[20] = "hello world"; strcpy(a, b); printf("%s\n",a);
-  char x[2] = {('0'+rand()%3)}; char y[2] = {('0'+rand()%3)}; 
+  char mp[20] = "0123456789";
+  char x[2] = {mp[(rand()%3)]}; char y[2] = {mp[('0'+rand()%3)]}; 
   strcat(a,x); strcat(b,y); srand(32);
   printf("%s | %s\n", x, y);
   printf("%d | %d\n", strlen(x), strlen(y));
