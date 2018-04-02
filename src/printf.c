@@ -1,4 +1,6 @@
+#include <am.h>
 #include <stdarg.h>
+
 static char mp[] = "0123456789ABCDEF";
 static int printf_int(unsigned int d, int base, int length, int type){
 	int ret = 0;
