@@ -1,1 +1,2 @@
-build/src/main.o: src/main.c include/am.h include/arch.h include/amdev.h
+build/src/main.o: src/main.c include/am.h include/arch.h include/amdev.h \
+ include/mylibc.h
