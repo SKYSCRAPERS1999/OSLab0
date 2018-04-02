@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include <mylib.h>
 // TODO: implement necessary libraries
-
+static void test_init();
 static void input_test(_Device *dev);
 static void timer_test(_Device *dev);
 static void video_test(_Device *dev);
@@ -13,6 +13,11 @@ static void my_test();
 
 int main() {
   if (_ioe_init() != 0) _halt(1);
+  start_game();
+  return 0;
+}
+
+static void test_init(){
   printf("_heap = [%08x, %08x)\n", _heap.start, _heap.end);
   for (int n = 1; ; n++) {
     _Device *dev = _device(n);
@@ -27,9 +32,7 @@ int main() {
     }
     printf("\n");
   }
-
   my_test();
-  return 0;
 }
 
 static void input_test(_Device *dev) {
