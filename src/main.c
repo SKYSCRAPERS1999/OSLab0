@@ -41,7 +41,7 @@ int printf(const char *fmt, ...) {
 					break;
 
 				case 'x':
-					d = va_arg(ap, int);
+					d = va_arg(ap, unsigned int);
 					printf_int(d, 16);
 					break; 	
 			  
