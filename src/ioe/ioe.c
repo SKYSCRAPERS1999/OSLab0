@@ -1,7 +1,6 @@
 #include <am.h>
 #include <amdev.h>
 #include <stdarg.h>
-#include <mylibc.h>
 
 #define KEYDOWN_MASK 0x8000
 uint32_t uptime(){
@@ -24,7 +23,6 @@ int read_key(){
 		if (!dev) break;
 		else if (dev->id == _DEV_INPUT){
 			dev->read(_DEVREG_INPUT_KBD, &key, sizeof(key));
-		    printf("keycode = %d\n", key.keycode);
 			if (key.keycode == _KEY_NONE) return _KEY_NONE;
 			else return (key.keycode | (key.keydown ? KEYDOWN_MASK : 0));
 		}
