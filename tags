@@ -1,0 +1,131 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CFLAGS	Makefile	/^CFLAGS  = -std=c99 -O2 -MMD -Wall -Werror -ggdb -fno-builtin \\$/;"	m
+DEPS	Makefile	/^DEPS = $(addprefix build\/, $(addsuffix .d, $(basename $(SRCS))))$/;"	m
+GPR1	include/arch.h	17;"	d
+GPR2	include/arch.h	18;"	d
+GPR3	include/arch.h	19;"	d
+GPR4	include/arch.h	20;"	d
+GPRx	include/arch.h	21;"	d
+LDFLAGS	Makefile	/^LDFLAGS = -melf_i386 -Ttext 0x00100000 $/;"	m
+NULL	include/am.h	14;"	d
+OBJS	Makefile	/^OBJS = $(addprefix build\/, $(addsuffix .o, $(basename $(SRCS))))$/;"	m
+SECTSZ	src/main.c	113;"	d	file:
+SRCS	Makefile	/^SRCS = $(shell find src -name "*.c")$/;"	m
+_Area	include/am.h	/^typedef struct _Area {$/;"	s
+_Area	include/am.h	/^} _Area; $/;"	t	typeref:struct:_Area
+_DEVREG_ATA_CYHIGH	include/amdev.h	85;"	d
+_DEVREG_ATA_CYLOW	include/amdev.h	84;"	d
+_DEVREG_ATA_DATA	include/amdev.h	80;"	d
+_DEVREG_ATA_DRIVE	include/amdev.h	86;"	d
+_DEVREG_ATA_FEATURE	include/amdev.h	81;"	d
+_DEVREG_ATA_NSECT	include/amdev.h	82;"	d
+_DEVREG_ATA_SECT	include/amdev.h	83;"	d
+_DEVREG_ATA_STATUS	include/amdev.h	87;"	d
+_DEVREG_INPUT_KBD	include/amdev.h	22;"	d
+_DEVREG_PCICONF	include/amdev.h	75;"	d
+_DEVREG_TIMER_DATE	include/amdev.h	54;"	d
+_DEVREG_TIMER_UPTIME	include/amdev.h	48;"	d
+_DEVREG_VIDEO_FBCTL	include/amdev.h	66;"	d
+_DEVREG_VIDEO_INFO	include/amdev.h	61;"	d
+_DEV_ATA0	include/amdev.h	14;"	d
+_DEV_ATA1	include/amdev.h	15;"	d
+_DEV_INPUT	include/amdev.h	10;"	d
+_DEV_PCICONF	include/amdev.h	13;"	d
+_DEV_PERFCNT	include/amdev.h	9;"	d
+_DEV_TIMER	include/amdev.h	11;"	d
+_DEV_VIDEO	include/amdev.h	12;"	d
+_Device	include/am.h	/^typedef struct _Device {$/;"	s
+_Device	include/am.h	/^} _Device;$/;"	t	typeref:struct:_Device
+_EVENT_ERROR	include/am.h	/^  _EVENT_ERROR,$/;"	e	enum:__anon7
+_EVENT_IRQ_IODEV	include/am.h	/^  _EVENT_IRQ_IODEV,$/;"	e	enum:__anon7
+_EVENT_IRQ_TIMER	include/am.h	/^  _EVENT_IRQ_TIMER,$/;"	e	enum:__anon7
+_EVENT_NULL	include/am.h	/^  _EVENT_NULL = 0,$/;"	e	enum:__anon7
+_EVENT_PAGEFAULT	include/am.h	/^  _EVENT_PAGEFAULT,$/;"	e	enum:__anon7
+_EVENT_SYSCALL	include/am.h	/^  _EVENT_SYSCALL,$/;"	e	enum:__anon7
+_EVENT_YIELD	include/am.h	/^  _EVENT_YIELD,$/;"	e	enum:__anon7
+_Event	include/am.h	/^typedef struct _Event {$/;"	s
+_Event	include/am.h	/^} _Event;$/;"	t	typeref:struct:_Event
+_FBCtlReg	include/amdev.h	/^  } _FBCtlReg;$/;"	t	typeref:struct:__anon6
+_KEYS	include/amdev.h	/^    _KEYS(_KEY_NAME)$/;"	e	enum:__anon1
+_KEYS	include/amdev.h	23;"	d
+_KEY_NAME	include/amdev.h	37;"	d
+_KEY_NONE	include/amdev.h	/^    _KEY_NONE = 0,$/;"	e	enum:__anon1
+_KbdReg	include/amdev.h	/^  } _KbdReg;$/;"	t	typeref:struct:__anon2
+_PROT_EXEC	include/am.h	36;"	d
+_PROT_NONE	include/am.h	33;"	d
+_PROT_READ	include/am.h	34;"	d
+_PROT_WRITE	include/am.h	35;"	d
+_Protect	include/am.h	/^typedef struct _Protect {$/;"	s
+_Protect	include/am.h	/^} _Protect;$/;"	t	typeref:struct:_Protect
+_RTCReg	include/amdev.h	/^  } _RTCReg;$/;"	t	typeref:struct:__anon4
+_RegSet	include/am.h	/^typedef struct _RegSet _RegSet;$/;"	t	typeref:struct:_RegSet
+_RegSet	include/arch.h	/^struct _RegSet {$/;"	s
+_UptimeReg	include/amdev.h	/^  } _UptimeReg;$/;"	t	typeref:struct:__anon3
+_VideoInfoReg	include/amdev.h	/^  } _VideoInfoReg;$/;"	t	typeref:struct:__anon5
+__AMDEV_H__	include/amdev.h	2;"	d
+__AM_H__	include/am.h	7;"	d
+__X86_ARCH_H__	include/arch.h	2;"	d
+area	include/am.h	/^  _Area area; $/;"	m	struct:_Protect
+ata_test	src/main.c	/^static void ata_test(_Device *dev) {$/;"	f	file:
+cause	include/am.h	/^  uintptr_t cause, ref;$/;"	m	struct:_Event
+cs	include/arch.h	/^           cs, ds, es, ss,$/;"	m	struct:_RegSet
+day	include/amdev.h	/^    int year, month, day;     \/\/ date$/;"	m	struct:__anon4
+ds	include/arch.h	/^           cs, ds, es, ss,$/;"	m	struct:_RegSet
+eax	include/arch.h	/^  uint32_t eax, ebx, ecx, edx,$/;"	m	struct:_RegSet
+ebp	include/arch.h	/^           esi, edi, ebp, esp3,$/;"	m	struct:_RegSet
+ebx	include/arch.h	/^  uint32_t eax, ebx, ecx, edx,$/;"	m	struct:_RegSet
+ecx	include/arch.h	/^  uint32_t eax, ebx, ecx, edx,$/;"	m	struct:_RegSet
+edi	include/arch.h	/^           esi, edi, ebp, esp3,$/;"	m	struct:_RegSet
+edx	include/arch.h	/^  uint32_t eax, ebx, ecx, edx,$/;"	m	struct:_RegSet
+eflags	include/arch.h	/^           eip, eflags,$/;"	m	struct:_RegSet
+eip	include/arch.h	/^           eip, eflags,$/;"	m	struct:_RegSet
+end	include/am.h	/^  void *start, *end;$/;"	m	struct:_Area
+es	include/arch.h	/^           cs, ds, es, ss,$/;"	m	struct:_RegSet
+esi	include/arch.h	/^           esi, edi, ebp, esp3,$/;"	m	struct:_RegSet
+esp0	include/arch.h	/^           ss0, esp0;$/;"	m	struct:_RegSet
+esp3	include/arch.h	/^           esi, edi, ebp, esp3,$/;"	m	struct:_RegSet
+event	include/am.h	/^  int event;$/;"	m	struct:_Event
+h	include/amdev.h	/^    int w, h;         \/\/   @pixels[i * w + j] is 00RRGGBB $/;"	m	struct:__anon6
+height	include/amdev.h	/^    int32_t width, height; \/\/ screen size: @width * @height$/;"	m	struct:__anon5
+hi	include/amdev.h	/^    uint32_t hi; \/\/ high 32bit of uptime (ms)$/;"	m	struct:__anon3
+hour	include/amdev.h	/^    int hour, minute, second; \/\/ time$/;"	m	struct:__anon4
+id	include/am.h	/^  uint32_t id;$/;"	m	struct:_Device
+input_test	src/main.c	/^static void input_test(_Device *dev) {$/;"	f	file:
+keycode	include/amdev.h	/^    int keycode; \/\/ key code _KEY_XXX$/;"	m	struct:__anon2
+keydown	include/amdev.h	/^    int keydown; \/\/ is keydown ? 1 : 0$/;"	m	struct:__anon2
+lo	include/amdev.h	/^    uint32_t lo; \/\/  low 32bit of uptime (ms)$/;"	m	struct:__anon3
+main	src/main.c	/^int main() {$/;"	f
+minute	include/amdev.h	/^    int hour, minute, second; \/\/ time$/;"	m	struct:__anon4
+month	include/amdev.h	/^    int year, month, day;     \/\/ date$/;"	m	struct:__anon4
+name	include/am.h	/^  const char *name;$/;"	m	struct:_Device
+off_t	include/arch.h	/^typedef int off_t;$/;"	t
+pci_conf_read	src/main.c	/^static uint32_t pci_conf_read(_Device *dev, uint8_t bus, uint8_t slot,$/;"	f	file:
+pciconf_test	src/main.c	/^static void pciconf_test(_Device *dev) {$/;"	f	file:
+pixels	include/amdev.h	/^    uint32_t *pixels; \/\/ @pixels: @w*@h pixels to draw$/;"	m	struct:__anon6
+printf	src/main.c	/^int printf(const char *fmt, ...) {$/;"	f
+ptr	include/am.h	/^  void *ptr;$/;"	m	struct:_Protect
+read	include/am.h	/^  size_t (*read)(uintptr_t reg, void *buf, size_t size);$/;"	m	struct:_Device
+readb	src/main.c	/^static uint8_t readb(_Device *dev, uint32_t reg) {$/;"	f	file:
+readl	src/main.c	/^static uint32_t readl(_Device *dev, uint32_t reg) {$/;"	f	file:
+ref	include/am.h	/^  uintptr_t cause, ref;$/;"	m	struct:_Event
+second	include/amdev.h	/^    int hour, minute, second; \/\/ time$/;"	m	struct:__anon4
+ss	include/arch.h	/^           cs, ds, es, ss,$/;"	m	struct:_RegSet
+ss0	include/arch.h	/^           ss0, esp0;$/;"	m	struct:_RegSet
+ssize_t	include/arch.h	/^typedef int ssize_t;$/;"	t
+start	include/am.h	/^  void *start, *end;$/;"	m	struct:_Area
+sync	include/amdev.h	/^    int sync;         \/\/ @sync ? sync screen : do nothing$/;"	m	struct:__anon6
+task	Makefile	/^	curl -F "task=L0" -F "id=$(STUID)" -F "name=$(STUNAME)" -F "submission=@..\/submission.tar.bz2" 114.212.81.90:5000\/upload$/;"	m
+timer_test	src/main.c	/^static void timer_test(_Device *dev) {$/;"	f	file:
+video_test	src/main.c	/^static void video_test(_Device *dev) {$/;"	f	file:
+w	include/amdev.h	/^    int w, h;         \/\/   @pixels[i * w + j] is 00RRGGBB $/;"	m	struct:__anon6
+width	include/amdev.h	/^    int32_t width, height; \/\/ screen size: @width * @height$/;"	m	struct:__anon5
+write	include/am.h	/^  size_t (*write)(uintptr_t reg, void *buf, size_t size);$/;"	m	struct:_Device
+writeb	src/main.c	/^static void writeb(_Device *dev, uint32_t reg, uint8_t res) {$/;"	f	file:
+x	include/amdev.h	/^    int x, y;         \/\/ draw to (@x, @y)$/;"	m	struct:__anon6
+y	include/amdev.h	/^    int x, y;         \/\/ draw to (@x, @y)$/;"	m	struct:__anon6
+year	include/amdev.h	/^    int year, month, day;     \/\/ date$/;"	m	struct:__anon4
