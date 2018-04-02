@@ -8,7 +8,8 @@ int printf(const char *fmt, ...) {
       _putc(*fmt);
     }
     */
-    va_list ap;
+    /*
+	va_list ap;
     int d; char c; char* s;
 	char mp[20] = "0123456789ABCDEF";
     va_start(ap, fmt);
@@ -47,7 +48,8 @@ int printf(const char *fmt, ...) {
 		fmt++;
     }
 	va_end(ap);
-    return 0;
+    */
+	return 0;
 }
 
 static void input_test(_Device *dev);
