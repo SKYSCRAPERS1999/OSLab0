@@ -13,8 +13,8 @@ static void my_test();
 
 int main() {
   if (_ioe_init() != 0) _halt(1);
+  test_init();
   start_game();
-  //test_init();
   return 0;
 }
 
