@@ -35,6 +35,7 @@ int printf(const char *fmt, ...) {
 					char *ptr; char dig[64];
 					ptr = &dig[63]; *ptr = '\0';
 					for ( ; d != 0; *--ptr = mp[d % 10], d /= 10);
+					if (*ptr == '\0') *--ptr = '0';
 					while (*ptr++) _putc(*ptr);
 					break; 	
 			  
@@ -124,7 +125,7 @@ static void pciconf_test(_Device *dev) {
       uint32_t info = pci_conf_read(dev, bus, slot, 0, 0);
       uint16_t id = info >> 16, vendor = info & 0xffff;
       if (vendor != 0xffff) {
-        printf("Get device %d : %d, id %x vendor %x", bus, slot, id, vendor);
+        printf("Get device %d:%d, id %x vendor %x", bus, slot, id, vendor);
         if (id == 0x100e && vendor == 0x8086) {
           printf(" <-- This is an Intel e1000 NIC card!");
         }
