@@ -33,7 +33,7 @@ int printf(const char *fmt, ...) {
 					_putc('-'); 
 				}
 				char dig[64] = {0,}; int nd = 0;
-				for ( ; d > 0; dig[nd] = (char((d % 10) + '0'), d /= 10, nd++);
+				for ( ; d > 0; dig[nd] = (char)((d % 10) + '0'), d /= 10, nd++);
 				for (int i = nd - 1; i >= 0; i--) _putc(dig[i]);
 				break; 	
 		  
