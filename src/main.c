@@ -146,6 +146,6 @@ static void ata_test(_Device *dev) {
   printf("%d\n",strcmp(a,b));
 
   //printf("\n%d\n", uptime());
-  unsigned int a[10000]; memset(a, 0xee, sizeof(a));
-  draw_rect(a, 10, 10, 99, 99);
+  unsigned int aa[10000]; memset(aa, 0xee, sizeof(aa));
+  draaw_rect(aa, 10, 10, 99, 99);
 }
