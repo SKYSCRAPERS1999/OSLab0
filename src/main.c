@@ -22,6 +22,7 @@ int printf_int(unsigned int d, int base, int length, int type){
 		*--ptr = c; 
 		ret++; 
 	}
+	/*if d = 0*/ if (*ptr == '\0') *--ptr = '0', ret++;
 	while (*ptr) _putc(*ptr++);
 	
 	return ret;
