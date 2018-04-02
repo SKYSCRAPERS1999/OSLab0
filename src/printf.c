@@ -4,9 +4,12 @@
 static char mp[] = "0123456789ABCDEF";
 static int printf_int(unsigned int d, int base, int length, int type){
 	int ret = 0;
-	if (base == 10 && d < 0){
-		d = -d;
-		_putc('-'), ret++; 
+	if (base == 10){
+		d = (int)d;
+		if (d < 0){
+			d = -d;
+			_putc('-'), ret++; 
+		}
 	}
 	char *ptr; char dig[64];
 	ptr = &dig[63]; *ptr = '\0';
