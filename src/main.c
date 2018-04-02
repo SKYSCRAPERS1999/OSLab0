@@ -26,6 +26,8 @@ int main() {
     }
     printf("\n");
   }
+
+  my_test();
   return 0;
 }
 
@@ -135,6 +137,9 @@ static void ata_test(_Device *dev) {
     printf("\n");
   }
   
+}
+
+static void my_test(){
   //my tests 
   char a[20]; char b[20] = "hello world"; strcpy(a, b); printf("%s\n",a);
   char mp[20] = "0123456789";srand(332);
@@ -150,4 +155,5 @@ static void ata_test(_Device *dev) {
   unsigned int aa[1000]; memset(aa, 0xff, sizeof(aa));
   for(int i = 0; i < 1000; i++) printf("%x\n", aa[i]);
   draw_rect(aa, 100, 200, 30, 30);
+
 }
