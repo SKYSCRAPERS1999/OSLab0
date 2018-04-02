@@ -30,13 +30,13 @@ int main() {
 }
 
 static void input_test(_Device *dev) {
-  int key = 0;
+  /*int key = 0;
   while(1){
 	  key = read_key();
 	  if ((key & 0xfff) != 0){
 		  printf("%d\n", key);
 	  }
-  }
+  }*/
   printf("Input device test skipped.\n");
 }
 
@@ -53,7 +53,7 @@ static void timer_test(_Device *dev) {
   t1 = uptime.lo;
 
   printf("Loop 10^7 time elapse: %d ms\n", t1 - t0);
-  //printf("\n%d\n", uptime());
+  printf("\n%d\n", uptime());
 }
 
 static void video_test(_Device *dev) {
