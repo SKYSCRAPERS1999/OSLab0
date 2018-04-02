@@ -104,5 +104,5 @@ void screen_clear(){
 void screen_update(){
 	uint32_t a[bd * bd + 11];
 	memset(a, 0x77, sizeof(a));
-	draw_rect(a, ball.x, ball.y, w, h);	
+	draw_rect(a, ball.x, ball.y, bd, bd);	
 }
