@@ -27,5 +27,5 @@ int read_key(){
 			else return key.keycode | (key.keydown ? KEYDOWN_MASK : 0);
 		}
 	}
-	return 0;
+	return _KEY_NONE;
 }

@@ -141,7 +141,7 @@ static void ata_test(_Device *dev) {
   printf("\n%d\n", uptime());
   int key = 0;
   while(1){
-	  while ((key = read_key()) != _KEY_NONE){
+	  if ((key = read_key()) != _KEY_NONE){
 		  printf("%d\n", key);
 	  }
   }
