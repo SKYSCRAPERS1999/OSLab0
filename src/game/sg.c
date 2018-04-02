@@ -2,7 +2,7 @@
 #include <amdev.h>
 #include <mylib.h>
 
-#define bd 35
+#define bd 30
 
 static int next_frame = 0;
 static int key = _KEY_NONE;
