@@ -9,11 +9,11 @@ int printf(const char *fmt, ...) {
     }
     */
     
-	va_list ap;
-    int d; char c; char* s;
+	va_list ap; char* iter;
+    int d; char c; char* s; 
 	char mp[20] = "0123456789ABCDEF";
     va_start(ap, fmt);
-    for (char* iter = fmt; *iter != '\0'; ++iter){
+    for (iter = fmt; *iter != '\0'; ++iter){
 		while (*iter != '%'){
 			_putc(*iter);
 			iter++;
