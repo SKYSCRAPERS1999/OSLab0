@@ -44,7 +44,7 @@ void screen_height(){
 }
 
 void draw_rect(uint32_t *pixels, int x, int y, int w, int h){	
-	_VideoInfoReg vdo;
+	_FBCtlReg vdo;
 	_Device* dev = get_dev(_DEV_VIDEO);
 	vdo.pixels = pixels; vdo.x = x; vdo.y = y; vdo.w = w; vdo.h = h;
 
