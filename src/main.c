@@ -3,6 +3,7 @@
 #include <stdarg.h>
 // TODO: implement necessary libraries
 void printf_int(int d, int base){
+	char mp[20] = "0123456789ABCDEF";
 	if (d < 0){
 		d = -d;
 		_putc('-'); 
@@ -23,7 +24,6 @@ int printf(const char *fmt, ...) {
 	va_list ap; 
 	const char* iter;
     int d; char c; char* s; 
-	char mp[20] = "0123456789ABCDEF";
     va_start(ap, fmt);
     for (iter = fmt; *iter != '\0'; ++iter){
 		if (*iter != '%'){
