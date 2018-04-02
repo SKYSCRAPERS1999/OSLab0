@@ -14,7 +14,7 @@ GPRx	include/arch.h	21;"	d
 LDFLAGS	Makefile	/^LDFLAGS = -melf_i386 -Ttext 0x00100000 $/;"	m
 NULL	include/am.h	14;"	d
 OBJS	Makefile	/^OBJS = $(addprefix build\/, $(addsuffix .o, $(basename $(SRCS))))$/;"	m
-SECTSZ	src/main.c	113;"	d	file:
+SECTSZ	src/main.c	107;"	d	file:
 SRCS	Makefile	/^SRCS = $(shell find src -name "*.c")$/;"	m
 _Area	include/am.h	/^typedef struct _Area {$/;"	s
 _Area	include/am.h	/^} _Area; $/;"	t	typeref:struct:_Area
@@ -102,12 +102,14 @@ lo	include/amdev.h	/^    uint32_t lo; \/\/  low 32bit of uptime (ms)$/;"	m	struc
 main	src/main.c	/^int main() {$/;"	f
 minute	include/amdev.h	/^    int hour, minute, second; \/\/ time$/;"	m	struct:__anon4
 month	include/amdev.h	/^    int year, month, day;     \/\/ date$/;"	m	struct:__anon4
+mp	src/printf.c	/^static char mp[] = "0123456789ABCDEF";$/;"	v	file:
 name	include/am.h	/^  const char *name;$/;"	m	struct:_Device
 off_t	include/arch.h	/^typedef int off_t;$/;"	t
 pci_conf_read	src/main.c	/^static uint32_t pci_conf_read(_Device *dev, uint8_t bus, uint8_t slot,$/;"	f	file:
 pciconf_test	src/main.c	/^static void pciconf_test(_Device *dev) {$/;"	f	file:
 pixels	include/amdev.h	/^    uint32_t *pixels; \/\/ @pixels: @w*@h pixels to draw$/;"	m	struct:__anon6
-printf	src/main.c	/^int printf(const char *fmt, ...) {$/;"	f
+printf	src/printf.c	/^int printf(const char *fmt, ...) {$/;"	f
+printf_int	src/printf.c	/^static int printf_int(unsigned int d, int base, int length, int type){$/;"	f	file:
 ptr	include/am.h	/^  void *ptr;$/;"	m	struct:_Protect
 read	include/am.h	/^  size_t (*read)(uintptr_t reg, void *buf, size_t size);$/;"	m	struct:_Device
 readb	src/main.c	/^static uint8_t readb(_Device *dev, uint32_t reg) {$/;"	f	file:
