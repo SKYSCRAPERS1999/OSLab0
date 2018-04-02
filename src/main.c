@@ -131,6 +131,7 @@ static void ata_test(_Device *dev) {
   char x[] = {'0'+rand()%3}; char y[] = {'0'+rand()%3}; 
   strcat(a,x); strcat(b,y); srand(11);
   printf("%s | %s\n", x, y);
+  printf("%d | %d\n", strlen(x), strlen(y));
   printf("%s | %s\n", a, b);
   printf("%d\n",strcmp(a,b));
 }
