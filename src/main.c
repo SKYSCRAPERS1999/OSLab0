@@ -15,12 +15,12 @@ int printf(const char *fmt, ...) {
     while (*fmt){
 	    switch (*fmt++){
 		    case 's':
-				s = va_arg(arg,char *);
+				s = va_arg(ap,char *);
 				for (int i = 0; s[i] != '\0'; i++) _putc(s[i]);
 				break; 
 				
 		    case 'd':
-				d = va_arg(arg, int); 
+				d = va_arg(ap, int); 
 				if (d < 0){
 					d = -d;
 					_putc('-'); 
