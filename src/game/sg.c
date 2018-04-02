@@ -93,7 +93,7 @@ void game_progress(){
 }
 
 void screen_clear(){
-	uint32_t a[] = {0};
+	uint32_t a[] = {0xffffffff};
 	for (int i = 0; i < w; i++){
 		for (int j = 0; j < h; j++){
 			draw_rect(a, i, j, w, h);	
