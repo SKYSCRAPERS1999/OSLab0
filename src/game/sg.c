@@ -27,8 +27,8 @@ void start_game(){
 		while ((key = read_key()) != _KEY_NONE) {
 			kbd_event(key);         // 处理键盘事件
 		}
+		screen_erase();
 		game_progress();          // 处理一帧游戏逻辑，更新物体的位置等
-		screen_clear();
 		screen_update();          // 重新绘制屏幕
 		next_frame += 1000 / FPS; // 计算下一帧的时间
 	}
@@ -99,6 +99,12 @@ void screen_clear(){
 			draw_rect(a, i, j, 1, 1);	
 		}
 	}
+}
+
+void screen_erase(){
+	uint32_t a[bd * bd + 11];
+	memset(a, 0, sizeof(a));
+	draw_rect(a, ball.x, ball.y, bd, bd);	
 }
 
 void screen_update(){
