@@ -4,7 +4,7 @@
 
 #define KEYDOWN_MASK 0x8000
 
-static _device get_dev(int name){
+static _Device* get_dev(int name){
 	for (int n = 1; ; n++){
 		_Device *dev = _device(n);
 		if (!dev) break;
