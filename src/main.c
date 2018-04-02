@@ -3,12 +3,12 @@
 #include <stdarg.h>
 // TODO: implement necessary libraries
 int printf(const char *fmt, ...) {
-    
+    /*
     for (; *fmt; fmt++) {
       _putc(*fmt);
     }
+    */
     
-    /*
 	va_list ap;
     int d; char c; char* s;
 	char mp[20] = "0123456789ABCDEF";
@@ -48,8 +48,7 @@ int printf(const char *fmt, ...) {
 		fmt++;
     }
 	va_end(ap);
-    */
-	return 0;
+    return 0;
 }
 
 static void input_test(_Device *dev);
