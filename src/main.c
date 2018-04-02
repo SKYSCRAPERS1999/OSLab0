@@ -13,9 +13,13 @@ int printf(const char *fmt, ...) {
     int d; char c; char* s;
     va_start(ap, fmt);
     while (*fmt){
+		while (*fmt != '%'){
+			_putc(*fmt);
+			fmt++;
+		}
 	    switch (*fmt++){
 		    case 's':
-				s = va_arg(ap,char *);
+				s = va_arg(ap, char*);
 				for (int i = 0; s[i] != '\0'; i++) _putc(s[i]);
 				break; 
 				
@@ -31,7 +35,7 @@ int printf(const char *fmt, ...) {
 				break; 	
 		  
 		    case 'c':
-				c = va_arg(ap, int);
+				c = (char)va_arg(ap, int);
 				_putc(c);
 				break;
 	    }
