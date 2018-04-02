@@ -2,6 +2,17 @@
 #include <amdev.h>
 #include <stdarg.h>
 // TODO: implement necessary libraries
+void printf_int(int d, int base){
+	if (d < 0){
+		d = -d;
+		_putc('-'); 
+	}
+	char *ptr; char dig[64];
+	ptr = &dig[63]; *ptr = '\0';
+	for ( ; d != 0; *--ptr = mp[d % base], d /= base);
+	while (*ptr++) _putc(*ptr);
+	return 0;
+}
 int printf(const char *fmt, ...) {
     /*
     for (; *fmt; fmt++) {
@@ -26,16 +37,13 @@ int printf(const char *fmt, ...) {
 					break; 
 				
 				case 'd':
+					d = va_arg(ap, int);
+					printf_int(d, 10);
+					break;
+
 				case 'x':
-					d = va_arg(ap, int); 
-					if (d < 0){
-						d = -d;
-						_putc('-'); 
-					}
-					char *ptr; char dig[64];
-					ptr = &dig[63]; *ptr = '\0';
-					for ( ; d != 0; *--ptr = mp[d % 10], d /= 10);
-					while (*ptr++) _putc(*ptr);
+					d = va_arg(ap, int);
+					printf_int(d, 16);
 					break; 	
 			  
 				case 'c':
