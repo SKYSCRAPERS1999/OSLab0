@@ -9,43 +9,42 @@ int printf(const char *fmt, ...) {
     }
     */
     
-	va_list ap; const char* iter;
+	va_list ap; 
+	const char* iter;
     int d; char c; char* s; 
 	char mp[20] = "0123456789ABCDEF";
     va_start(ap, fmt);
     for (iter = fmt; *iter != '\0'; ++iter){
-		while (*iter != '%'){
+		if (*iter != '%'){
 			_putc(*iter);
-			iter++;
+			++iter;
+		}else{
+			++iter;
+			switch (*iter){
+				case 's':
+					s = va_arg(ap, char*);
+					for (int i = 0; s[i] != '\0'; i++) _putc(s[i]);
+					break; 
+				
+				case 'x':
+				case 'd':
+					d = va_arg(ap, int); 
+					if (d < 0){
+						d = -d;
+						_putc('-'); 
+					}
+					char *ptr; char dig[64];
+					ptr = &dig[63]; *ptr = '\0';
+					for ( ; d != 0; *--ptr = mp[d % 10], d /= 10);
+					while (*ptr++) _putc(*ptr);
+					break; 	
+			  
+				case 'c':
+					c = (char)va_arg(ap, int);
+					_putc(c);
+					break;
+			}
 		}
-		
-		while (*iter != 's' && *iter != 'd' && *iter != 'x' && *iter != 'c') iter++;
-
-	    switch (*iter){
-		    case 's':
-				s = va_arg(ap, char*);
-				for (int i = 0; s[i] != '\0'; i++) _putc(s[i]);
-				break; 
-			
-			case 'x':
-		    case 'd':
-				d = va_arg(ap, int); 
-				if (d < 0){
-					d = -d;
-					_putc('-'); 
-				}
-				char *ptr; char dig[64];
-				ptr = &dig[63]; *ptr = '\0';
-				for ( ; d != 0; *--ptr = mp[d % 10], d /= 10);
-				while (*ptr++) _putc(*ptr);
-				break; 	
-		  
-		    case 'c':
-				c = (char)va_arg(ap, int);
-				_putc(c);
-				break;
-	    }
-		iter++;
     }
 	va_end(ap);
     return 0;
